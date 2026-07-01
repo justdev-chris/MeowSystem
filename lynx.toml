@@ -1,0 +1,7 @@
+[package]
+name = "meowsys"
+version = "0.1.0"
+authors = ["justdev-chris"]
+description = "🐱 MeowSystem – cat-themed system library for Lynx. prowl, sniff, hiss, scratch, claw, nap & more."
+
+[dependencies]
