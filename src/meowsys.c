@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+#include <direct.h>   
 #include <unistd.h>
 #include <sys/stat.h>
 #include <time.h>
