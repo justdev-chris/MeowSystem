@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,6 +20,7 @@ jobs:
       - name: Prepare Tarball
         run: |
           mkdir package
+          mkdir package/src
           cp lynx.toml package/
           cp lynx/main.lnx package/src/main.lnx
           cp meowsys.dll package/meowsys.dll
