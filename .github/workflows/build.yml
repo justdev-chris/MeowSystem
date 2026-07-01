@@ -1,0 +1,32 @@
+name: Build MeowSystem
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile MeowSystem DLL
+        run: gcc -shared -o meowsys.dll src/meowsys.c -lws2_32
+
+      - name: Prepare Tarball
+        run: |
+          mkdir package
+          cp lynx.toml package/
+          cp lynx/main.lnx package/src/main.lnx
+          cp meowsys.dll package/meowsys.dll
+          cd package
+          tar -czf ../meowsys-0.1.0.tar.gz *
+
+      - name: Upload Tarball
+        uses: actions/upload-artifact@v4
+        with:
+          name: meowsys-tarball
+          path: meowsys-0.1.0.tar.gz
