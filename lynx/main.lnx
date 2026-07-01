@@ -1,0 +1,46 @@
+# meowsys – Cat-themed system library for Lynx
+# Usage: KittyPort "meowsys"
+
+LoadLib "meowsys"
+
+# ─── FUNCTIONS ────────────────────────────────────────────────────
+
+Func prowl(path) {
+    Return listdir(path)
+}
+
+Func sniff(name) {
+    Return getenv_c(name)
+}
+
+Func hiss(cmd) {
+    Return system_c(cmd)
+}
+
+Func pad(path) {
+    Return chdir_c(path)
+}
+
+Func scratch(path) {
+    Return mkdir_c(path)
+}
+
+Func claw(path) {
+    Return remove_c(path)
+}
+
+Func bat(old, new) {
+    Return rename_c(old, new)
+}
+
+Func tail() {
+    Return getcwd_c()
+}
+
+Func whisker(path) {
+    Return exists_c(path)
+}
+
+Func nap(seconds) {
+    sleep_c(seconds)
+}
