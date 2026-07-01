@@ -1,7 +1,7 @@
 # meowsys – Cat-themed system library for Lynx
 # Usage: KittyPort "meowsys"
 
-LoadLib "meowsys"
+LoadLib "../meowsys"
 
 # ─── FUNCTIONS ────────────────────────────────────────────────────
 
