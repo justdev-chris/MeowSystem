@@ -80,3 +80,19 @@ __declspec(dllexport) void nap(int seconds) {
         sleep(seconds);
     #endif
 }
+
+// ─── REGISTRATION ────────────────────────────────────────────────
+typedef void (*RegisterFunc)(const char* name, void* func);
+
+__declspec(dllexport) void lynx_init(RegisterFunc register_func) {
+    register_func("prowl", prowl);
+    register_func("sniff", sniff);
+    register_func("hiss", hiss);
+    register_func("pad", pad);
+    register_func("scratch", scratch);
+    register_func("claw", claw);
+    register_func("bat", bat);
+    register_func("tail", tail);
+    register_func("whisker", whisker);
+    register_func("nap", nap);
+}
